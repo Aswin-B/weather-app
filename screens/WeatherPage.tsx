@@ -99,16 +99,16 @@ const WeatherPage = () => {
 
   return (
     <View style={styles.weatherBox}>
-      <Text style={styles.heading}>Weather App</Text>
-      <TextInput
-      placeholder='Enter City' value={city} onChangeText={(text) => setCity(text.trim())} style={styles.inputCity}
-      />
-      <TouchableOpacity style={styles.searchButton} onPress={fetchWeather}>
-        <Text style={styles.btnText}>Search</Text>
-      </TouchableOpacity>
-      {loading && <ActivityIndicator size="large" color="#007BFF" />}
-      {error && <Text style={styles.error}>{error}</Text>}
-      {weatherData && (
+        <Text style={styles.heading}>Weather App</Text>
+        <TextInput
+        placeholder='Enter City' value={city} onChangeText={(text) => setCity(text.trim())} style={styles.inputCity}
+        />
+        <TouchableOpacity style={styles.searchButton} onPress={fetchWeather}>
+            <Text style={styles.btnText}>Search</Text>
+        </TouchableOpacity>
+        {loading && <ActivityIndicator size="large" color="#007BFF" />}
+        {error && <Text style={styles.error}>{error}</Text>}
+        {weatherData && (
         <View style={styles.weatherContainer}>
             <Text style={styles.city}>{weatherData?.name}</Text>
             <Text style={styles.temp}>{weatherData?.main?.temp}°C</Text>
